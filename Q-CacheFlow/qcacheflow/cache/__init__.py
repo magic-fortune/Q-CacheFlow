@@ -1,2 +1,0 @@
-"""Compiler cache implementation."""
-
