@@ -94,8 +94,6 @@ Q-CacheFlow/
 │   ├── pipeline/       # estimator + SLO-aware Q-CacheFlow decision path
 │   ├── scheduler/      # Q-CacheFlow and baseline scheduling policies
 │   └── simulator/      # event-driven execution and workload replay
-├── examples/
-│   └── quickstart.py   # minimal runnable comparison
 ├── assets/             # README architecture figures
 └── requirements.txt
 ```
@@ -111,29 +109,8 @@ pip install -r requirements.txt
 ```
 
 Qiskit is listed as the main dependency because it enables real transpilation
-measurements. The core code also includes a simple fallback circuit path, so the
-quickstart can still exercise scheduling logic in lightweight environments.
-
-## Quick Start
-
-Run the compact example:
-
-```bash
-python3 examples/quickstart.py
-```
-
-Expected output shape:
-
-```text
-policy              slo       p95     hit     dmr     fvr
----------------------------------------------------------
-cache-unaware     0.xxx     x.xxx   0.xxx   0.xxx   0.xxx
-qcacheflow        0.xxx     x.xxx   0.xxx   0.xxx   0.xxx
-```
-
-The columns report SLO goodput, p95 turnaround time, cache-hit rate, deadline
-miss ratio, and fidelity violation ratio. Exact values can differ across Python
-and Qiskit versions because transpilation time and generated circuits may vary.
+measurements. The core code also includes a simple fallback circuit path for
+lightweight environments.
 
 ## Common Knobs
 
